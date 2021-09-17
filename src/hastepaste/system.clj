@@ -30,8 +30,6 @@
             (catch Exception e 
                 (error "Failed to build system" e))))
 
-    )
-)
 ;; Atomically alters the root binding of variable by mechanically changing the value of a variable and sets it to  new value 
 ;; system initialisation function 
 (defn init-system
