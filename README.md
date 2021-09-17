@@ -2,7 +2,7 @@
 
 A pastebin clone using uuid4
 
-## Usage
+## Run
 
 lein run
 
