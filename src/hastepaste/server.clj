@@ -10,7 +10,7 @@
           [bidi.ring :refer [make-handler]]
           [aleph.http :as http]
           [ring.util.response :as res]
-          [ring.utl.request :as req]
+          [ring.util.request :as req]
           [ring.middleware.params :refer [wrap-params]]
           [hastepaste.view :as view]
           [hastepaste.store :as store]))
