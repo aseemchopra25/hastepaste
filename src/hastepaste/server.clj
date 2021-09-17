@@ -5,3 +5,13 @@
 
 ;; In its simplest form that component wraps the aleph webserver 
 
+(ns hastepaste.server
+(:require [com.stuartsierra.component :as component]
+          [bidi.ring :refer [make-handler]]
+          [aleph.http :as http]
+          [rng.util.response :as res]
+          [ring.utl.request :as req]
+          [ring.middleware.params :refer [wrap-params]]
+          [hastepaste.view :as view]
+          [hastepaste.store :as store]))
+          
