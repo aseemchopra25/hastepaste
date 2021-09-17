@@ -14,4 +14,11 @@
           [ring.middleware.params :refer [wrap-params]]
           [hastepaste.view :as view]
           [hastepaste.store :as store]))
-          
+        
+(defn handle-post
+    "This handles creating a new paste, based on the POST data"
+    [store request]
+    (let [content (get (:form-params request) "content")
+        uuid (store/add-new-paste store content)]
+    (res/redirect (str "/" uuid) :see-other)))
+
