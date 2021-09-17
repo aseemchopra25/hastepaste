@@ -40,6 +40,14 @@
     (make-handler ["/" {"" (partial index-handler store)
                         [:uuid] (partial paste-handler store)}]))
 
+;; We pass the result of the handler function that builds the  bidi handler. The handler maps the URLs to your users 
+;; The handler function also receives the store as an entry into the server component map. 
+;; This lets us forward a reference to the store to our paste handler 
+(defn handler
+    "Get the handler function for our routes"
+    [store]
+    (make-handler ["/" {"" (partial index-handler store)}]))
+    
 (defn app
     [store]
     (-> (handler store)
