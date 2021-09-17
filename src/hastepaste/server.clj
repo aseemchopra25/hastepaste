@@ -22,3 +22,10 @@
         uuid (store/add-new-paste store content)]
     (res/redirect (str "/" uuid) :see-other)))
 
+(defn handle-index
+    "We get there when we are displaying the index page, prompting for a new paste"
+    [request]
+    (res/response (view/render-form)))
+
+
+
