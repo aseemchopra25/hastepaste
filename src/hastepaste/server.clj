@@ -51,7 +51,7 @@
 (defn app
     [store]
     (-> (handler store)
-        wrap params))
+        wrap-params))
 
 (defrecord HttpServer [server]
     component/Lifecycle 
