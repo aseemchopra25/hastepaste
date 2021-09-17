@@ -3,9 +3,9 @@
 A pastebin clone using uuid4
 
 ## Run
-
+```
 lein run
-
+```
 ## License
 
 Copyright © 2021 Aseem Chopra
