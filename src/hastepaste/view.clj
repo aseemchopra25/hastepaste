@@ -18,13 +18,13 @@
     "Given a map as a paste, return HTML string for the display or output of the paste"
     [paste]
     (html5 [:head 
-        (include-js "https://sos-de-fra-1.exo.io/highlight.js/9.12.0/highlight.min.js")
-        (include-js "https://sos-de-fra-1.exo.io/highlight.js/9.12.0/go.min.js")
-        (include-js "https://sos-de-fra-1.exo.io/highlight.js/9.12.0/clojure.min.js")
-        (include-js "https://sos-de-fra-1.exo.io/highlight.js/9.12.0/yaml.min.js")
-        (include-css "https://sos-de-fra-1.exo.io/highlight.js/9.12.0/default.min.css")
-        [:meta {:charset "UTF-8"}]
-        [:script "hljs.initHightingOnLoad();"]]
+            (include-js "https://sos-de-fra-1.exo.io/highlight.js/9.12.0/highlight.min.js")
+            (include-js "https://sos-de-fra-1.exo.io/highlight.js/9.12.0/go.min.js")
+            (include-js "https://sos-de-fra-1.exo.io/highlight.js/9.12.0/clojure.min.js")
+            (include-js "https://sos-de-fra-1.exo.io/highlight.js/9.12.0/yaml.min.js")
+            (include-css "https://sos-de-fra-1.exo.io/highlight.js/9.12.0/default.min.css")
+            [:meta {:charset "UTF-8"}]
+            [:script "hljs.initHightingOnLoad();"]]
 
         [:body 
             [:pre [:code (:content paste)]]]))
@@ -35,7 +35,7 @@
     []
     (html5 [:head
             [:meta {:charset "UTF-8"}]]
-            [:body
+           [:body
                 (form-to [:post "/"]
                     (text-area {:cols 80 
                                 :row 15} "content")

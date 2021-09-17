@@ -17,6 +17,7 @@
     "Find the paste corresponding to passed-in uuid, then return it."
     [store uuid]
     ((keyword uuid) @(:data store)))
+
 (defrecord InMemoryStore [data]
 
     component/Lifecycle 
@@ -25,6 +26,5 @@
     (stop [this] this))
 
 (defn make-store
-
     []
     (map->InMemoryStore {}))

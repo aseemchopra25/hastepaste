@@ -35,10 +35,9 @@
         (handle-post store request)
         (handle-index request)))
 (defn paste-handler 
-    "Get the handler function of our routes"
-    [store]
-    (make-handler ["/" {"" (partial index-handler store)
-                        [:uuid] (partial paste-handler store)}]))
+    [store request]
+    (let [paste (store/get-paste-by-uuid store (:uuid (:route-params request)))]
+        (res/response (view/render-paste paste))))
 
 ;; We pass the result of the handler function that builds the  bidi handler. The handler maps the URLs to your users 
 ;; The handler function also receives the store as an entry into the server component map. 
@@ -46,7 +45,8 @@
 (defn handler
     "Get the handler function for our routes"
     [store]
-    (make-handler ["/" {"" (partial index-handler store)}]))
+    (make-handler ["/" {"" (partial index-handler store)
+        [:uuid] (partial paste-handler store)}]))
     
 (defn app
     [store]
