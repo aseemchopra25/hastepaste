@@ -9,7 +9,7 @@
 (:require [com.stuartsierra.component :as component]
           [bidi.ring :refer [make-handler]]
           [aleph.http :as http]
-          [rng.util.response :as res]
+          [ring.util.response :as res]
           [ring.utl.request :as req]
           [ring.middleware.params :refer [wrap-params]]
           [hastepaste.view :as view]
